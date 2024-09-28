@@ -62,9 +62,10 @@ class Sock {
 }
 
 const loginBtn = document.getElementById("login-btn");
+const loginForm = document.getElementById("login-form");
 const hero = document.getElementById("hero");
 const loginContainer = document.getElementById("login-container");
-loginBtn.addEventListener("click", function (e) {
+loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
   loginContainer.classList.add("d-none");
   hero.classList.remove("d-none");
@@ -151,42 +152,16 @@ const deleteSock = function () {
     });
 };
 
-//   let methodToUse;
-//   if (sockId) {
-//     methodToUse = "PUT";
-//   } else {
-//     methodToUse = "POST";
-//   }
+const resetBtn = document.createElement("button");
+resetBtn.classList.add("btn", "btn-outline-danger");
+resetBtn.innerText = "RESETTA";
+resetBtn.type = "button";
+sockForm.appendChild(resetBtn);
 
-//   let urlToUse;
-//   if (sockId) {
-//     urlToUse = url + "/" + sockId;
-//   } else {
-//     urlToUse = url;
-//   }
-
-//   fetch(urlToUse, {
-//     method: methodToUse,
-//     body: JSON.stringify(newSock),
-//     headers: {
-//       "Content-type": "application/json",
-//       Authorization:
-//         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmY1OWRjNDc5YzQ1ZjAwMTU2OWI0N2YiLCJpYXQiOjE3MjczNzQ0NjUsImV4cCI6MTcyODU4NDA2NX0.Ay9ad_jhcMNA2IDb1DeNwmg8wQxvK6m_Hdbqr264Y3s",
-//       "Content-type": "application/json",
-//     },
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         alert(sockId ? "Calzino modificato con successo" : "Calzino salvato");
-//         if (!sockId) {
-//           sockForm.reset();
-//         } else {
-//           window.location.href = "./shopOnline.html";
-//         }
-//       } else {
-//         throw new Error("Errore dalla risposta");
-//       }
-//     })
-//     .catch((err) => {
-//       console.log("ERRORE", err);
-//     });
+resetBtn.addEventListener("click", function () {
+  const name = document.getElementById("name");
+  name.value = "";
+  description.value = "";
+  price.value = "";
+  brand.value = "";
+});

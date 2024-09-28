@@ -4,6 +4,22 @@ nav {
   background-position: center;
   background-size: contain;
 }
-main {
-  background-image: url("");
+#bg-img {
+  border-top-left-radius: 50%;
+}
+.hero {
+  background-color: yellow;
+  height: 20rem;
+}
+
+.hero img {
+  width: 15rem;
+  border-radius: 100%;
+  position: relative;
+  top: 13rem;
+  left: -7rem;
+}
+.politica {
+  background-color: yellow;
+  height: 10rem;
 }
